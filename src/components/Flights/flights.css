@@ -1,0 +1,17 @@
+input {
+  display: inline-block;
+}
+
+.bg-div {
+  margin-top: 70px;
+  width: 100%;
+  background-color: black;
+  position: relative;
+}
+
+.bg {
+  width: 100%;
+  opacity: 0.5;
+  object-fit: cover;
+  object-position: bottom;
+}

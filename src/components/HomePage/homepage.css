@@ -1,0 +1,105 @@
+.slide-div {
+  margin-top: 70px;
+  height: 300px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+  background-color: black;
+}
+.slide-div:hover {
+  cursor: pointer;
+}
+
+.slider {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.slider-text {
+  position: absolute;
+  bottom: 5px;
+  left: 30px;
+  color: white;
+  z-index: 2;
+  margin: 15px;
+}
+
+.slider-text h1 {
+  font-family: Sigmar;
+  font-size: 2.8rem;
+  text-shadow: 0 0 120px rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+.slider-text h2 {
+  font-family: "Josefin Sans";
+  font-weight: normal;
+  font-size: 1.2rem;
+  text-shadow: 0 0 180px rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+.themes {
+  width: 94%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.themes h1 {
+  font-weight: bold;
+  margin-left: 30px;
+  margin-top: 15px;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+  padding-top: 10px;
+}
+
+.content {
+  border: 1px solid grey;
+  border-radius: 8px;
+  display: flex;
+}
+
+.cover {
+  flex: 1;
+}
+
+.description {
+  margin: auto;
+  flex: 2;
+}
+
+.description h1 {
+  font-size: 1.4rem;
+  margin: 10px 0;
+}
+
+.description p {
+  font-size: 0.8rem;
+  padding-right: 8px
+}
+
+.content img {
+  width: 80%;
+  margin: 10px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: right;
+}
+
+.content:hover {
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}

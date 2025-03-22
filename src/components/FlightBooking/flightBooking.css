@@ -1,0 +1,133 @@
+.board {
+  background-color: white;
+  margin-left: 5%;
+  border: none;
+  border-radius: 10px;
+  width: 90%;
+  position: absolute;
+  top: 20px;
+  padding: 10px;
+}
+
+.details {
+  display: flex;
+  margin: 20px;
+  width: 95%;
+}
+
+.from, .to, .travellers {
+  flex: 2;
+  border: 1px solid rgb(202, 202, 202);
+  padding: 10px;
+}
+
+.travellers {
+  flex: 1.5;
+}
+
+.details h1, .details p {
+  font-family: Lato;
+  margin: 0;
+}
+
+.details h1 {
+  font-weight: bold;
+  margin-top: 5px;
+  color: black;
+}
+
+.details p {
+  color: grey;
+  margin-left: 18px;
+}
+
+.departure {
+  flex: 1;
+  border: 1px solid rgb(202, 202, 202);
+  padding: 10px;
+}
+
+.special-fares {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.special-fares h1, .special-fares h3 {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 2px 0;
+}
+
+.special-fares p {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.heading {
+  border: none;
+  margin: 0 20px;
+  padding: 0;
+  height: 100%;
+}
+
+.heading h1 {
+  font-size: 1.2rem;
+  color: green;
+  margin: auto;
+  vertical-align: middle;
+  margin: 0;
+}
+
+input {
+  width: 80%;
+  margin-left: 18px;
+}
+
+#to-city, #from-city {
+  height: 3.8rem;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#departure {
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+}
+
+select {
+  font-size: 60px;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 2rem;
+  font-family: Lato;
+  font-weight: bold;
+  opacity: 1;
+  color: black;
+}
+
+.search {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.search-button {
+  background-image: linear-gradient(to right, rgb(17, 136, 255), rgb(123, 189, 255));
+  border: none;
+  padding: 10px 30px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  border-radius: 25px;
+}
+
+.options {
+  font-size: 0.8rem;
+  padding: 8px;
+  margin: 10px;
+}

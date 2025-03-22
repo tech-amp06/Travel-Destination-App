@@ -1,0 +1,108 @@
+.results {
+  margin: 50px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+  width: 90%;
+  position: absolute;
+  top: 0px;
+}
+
+.results h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(202, 202, 202);
+}
+
+
+.route {
+  width: 100%;
+  margin: auto;
+  border: 0.5px solid rgb(202, 202, 202);
+}
+
+.desc {
+  display: flex;
+}
+
+.airlines {
+  display: flex;
+}
+
+.airlines img {
+  width: 30px;
+  float: left;
+  margin: 10px;
+  flex: 1;
+}
+
+.airlines-info {
+  margin: auto;
+  flex: 4;
+}
+.airlines-info p {
+  margin: 0;
+}
+
+.airlines {
+  flex: 1;
+}
+
+.time {
+  flex: 2;
+  display: flex;
+}
+
+.dep, .duration, .arr {
+  margin: auto;
+  text-align: center;
+  flex: 1;
+}
+
+.duration {
+  position: relative;
+}
+
+.duration img {
+  width: 120px;
+  height: 20px;
+}
+
+.duration p {
+  position: absolute;
+  top: -12px;
+  left: 65px;
+  z-index: 1000;
+  color: grey;
+}
+
+.fare {
+  flex: 1;
+  text-align: right;
+  font-weight: bold;
+  margin: auto;
+  margin-right: 20px;
+}
+
+.flight-details {
+  margin: 0;
+  text-align: right;
+}
+
+.flight-details p {
+  font-size: 0.8rem;
+  margin: 4px;
+  color: rgb(0, 106, 255);
+}
+
+.empty-element {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.empty-element img {
+  width: 200px;
+}
