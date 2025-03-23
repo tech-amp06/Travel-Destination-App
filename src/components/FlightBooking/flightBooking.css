@@ -82,7 +82,7 @@
   margin: 0;
 }
 
-input {
+.departure input, .travellers input {
   width: 80%;
   margin-left: 18px;
 }
