@@ -40,6 +40,7 @@ function FlightBooking({ details }: any) {
               <option className='fs-6' value="New York">New York</option>
               <option className='fs-6' value="Mumbai">Mumbai</option>
               <option className='fs-6' value="Dubai">Dubai</option>
+              <option className='fs-6' value="Paris">Paris</option>
             </select>
             
             <p>{ airports[fromCity] }</p>
@@ -58,6 +59,7 @@ function FlightBooking({ details }: any) {
               <option className='fs-6' value="New York">New York</option>
               <option className='fs-6' value="Mumbai">Mumbai</option>
               <option className='fs-6' value="Dubai">Dubai</option>
+              <option className='fs-6' value="Paris">Paris</option>
             </select>
 
             <p className='p-0'>{ airports[toCity] }</p>

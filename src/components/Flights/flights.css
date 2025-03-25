@@ -7,6 +7,7 @@ input {
   width: 100%;
   background-color: black;
   position: relative;
+  height: 900px;
 }
 
 .bg {
@@ -14,4 +15,5 @@ input {
   opacity: 0.5;
   object-fit: cover;
   object-position: bottom;
+  position: fixed;
 }

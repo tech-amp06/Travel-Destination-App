@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import '../../assets/credentials.json'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import authenticate from '../../api/authenticationApi';
 
 function Login() {
   const navigate = useNavigate();
@@ -14,9 +13,11 @@ function Login() {
   function auth() {
     if (username === "traveller06" && password === "myself_traveller") {
       setIsValid(true);
-      navigate('/', { state : true });
+      localStorage.setItem("loggedIn", "true");
+      navigate('/');
     } else {
       setIsValid(false);
+      localStorage.setItem("loggedIn", "false");
     }
   }
 

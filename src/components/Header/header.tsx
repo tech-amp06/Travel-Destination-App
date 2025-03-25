@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 function Header() {
   const location = useLocation();
-  const ifLoggedIn = location.state || false;
+  const ifLoggedIn = localStorage.getItem("loggedIn") || false;
 
   return (
     <div className="header">
