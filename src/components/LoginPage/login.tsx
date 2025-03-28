@@ -17,7 +17,6 @@ function Login() {
       navigate('/');
     } else {
       setIsValid(false);
-      localStorage.setItem("loggedIn", "false");
     }
   }
 

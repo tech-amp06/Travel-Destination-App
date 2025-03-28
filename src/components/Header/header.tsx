@@ -1,10 +1,13 @@
 import './header.css';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 function Header() {
-  const location = useLocation();
-  const ifLoggedIn = localStorage.getItem("loggedIn") || false;
+  const [ifLoggedIn, setIfLoggedIn] = useState(Boolean(localStorage.getItem("loggedIn")));
+
+  useEffect(() => {
+    setIfLoggedIn(Boolean(localStorage.getItem("loggedIn")));
+  })
 
   return (
     <div className="header">
@@ -24,14 +27,24 @@ function Header() {
         </Link>
         <button className="categories-button">BUSES</button>
         <button className="categories-button">TRAINS</button>
-        <button className="categories-button" id="longer">
-          HOLIDAY PACKAGES
-        </button>
+        <button className="categories-button" id="longer">HOLIDAY PACKAGES</button>
       </div>
 
       {ifLoggedIn ? (
-        <div className="profile">
-          <button className="btn-profile">Hello, Traveller!</button>
+        <div className="btn-group" style={{ marginRight: "20px" }}>
+          <Link to="/profile">
+            <button type="button" className="btn btn-secondary">Hello, Traveller!</button>
+          </Link>
+          <button type="button" className="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span className="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul className="dropdown-menu">
+            <li><a className="dropdown-item" href="#">Go to Profile</a></li>
+            <li><a className="dropdown-item" href="#">Your bookings</a></li>
+            <li><a className="dropdown-item" href="#">Your wallet</a></li>
+            <li><hr className="dropdown-divider" /></li>
+            <li><a className="dropdown-item" onClick={() => {setIfLoggedIn(false); localStorage.clear();}}>Logout</a></li>
+          </ul>
         </div>
       ) : (
         <Link to="/login">

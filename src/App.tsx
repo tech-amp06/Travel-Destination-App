@@ -6,6 +6,7 @@ import Flights from './components/Flights/flights'
 import Suggested from './components/SuggestedDestination/suggested'
 import FlightBookingResults from './components/FlightBooking/FlightBookingResults/flightBookingResults'
 import { Routes, Route } from 'react-router-dom'
+import Profile from './components/Profile/profile'
 
 function App() {
   return (
@@ -34,6 +35,11 @@ function App() {
         <Route 
           path="/flights-results"
           element={<FlightBookingResults />}
+        />
+
+        <Route 
+          path="/profile"
+          element={<Profile />}
         />
       </Routes>
     </>
