@@ -1,0 +1,50 @@
+.details {
+  display: flex;
+  margin: 20px;
+  width: 95%;
+}
+
+.from, .to, .travellers {
+  flex: 1.5;
+  border: 1px solid rgb(202, 202, 202);
+  padding: 10px;
+}
+
+.travellers {
+  flex: 1;
+}
+
+.details h1, .details p {
+  font-family: Lato;
+  margin: 0;
+}
+
+.details h1 {
+  font-weight: bold;
+  margin-top: 5px;
+  color: black;
+}
+
+.details p {
+  color: grey;
+  margin-left: 18px;
+}
+
+.departure {
+  flex: 1;
+  min-width: none;
+  border: 1px solid rgb(202, 202, 202);
+  padding: 10px;
+}
+
+#departure {
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+}
+
+#return {
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+}

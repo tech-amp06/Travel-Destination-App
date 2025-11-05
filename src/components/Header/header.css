@@ -59,3 +59,16 @@
   padding: 0;
   font-size: 0.9rem;
 }
+
+.dropdown-p {
+  margin-top: 4px;
+  padding: 0 10px;
+  font-family: Roboto;
+  font-weight: 300;
+  color: grey;
+  width: 100%;
+}
+
+.dropdown-p:hover {
+  cursor: pointer;
+}

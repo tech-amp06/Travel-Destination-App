@@ -39,11 +39,11 @@ function Header() {
             <span className="visually-hidden">Toggle Dropdown</span>
           </button>
           <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Go to Profile</a></li>
-            <li><a className="dropdown-item" href="#">Your bookings</a></li>
-            <li><a className="dropdown-item" href="#">Your wallet</a></li>
+            <li><p className="dropdown-item dropdown-p">Go to Profile</p></li>
+            <li><p className="dropdown-item dropdown-p">Your bookings</p></li>
+            <li><p className="dropdown-item dropdown-p">Your wallet</p></li>
             <li><hr className="dropdown-divider" /></li>
-            <li><a className="dropdown-item" onClick={() => {setIfLoggedIn(false); localStorage.clear();}}>Logout</a></li>
+            <li><p className="dropdown-item dropdown-p" onClick={() => {setIfLoggedIn(false); localStorage.clear();}}>Logout</p></li>
           </ul>
         </div>
       ) : (

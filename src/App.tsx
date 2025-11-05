@@ -23,17 +23,20 @@ function App() {
           element={<Login />}
         />
         <Route 
+          path="/flights/:airport_code/:airport_code"
+          element={<Flights />}
+        />
+        <Route 
           path="/flights"
           element={<Flights />}
         />
-
         <Route 
           path="/suggested"
           element={<Suggested />}
         />
 
         <Route 
-          path="/flights-results"
+          path="/flights-results/:source/:destination"
           element={<FlightBookingResults />}
         />
 

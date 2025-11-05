@@ -1,0 +1,59 @@
+.details {
+  display: flex;
+  margin: 20px;
+  width: 95%;
+}
+
+.from, .to, .travellers {
+  flex: 1;
+  border: 1px solid rgb(202, 202, 202);
+  padding: 10px;
+}
+
+.travellers {
+  flex: 1;
+}
+
+.details h1, .details p {
+  font-family: Lato;
+  margin: 0;
+}
+
+.details h1 {
+  font-weight: bold;
+  margin-top: 5px;
+  color: black;
+}
+
+.details p {
+  color: grey;
+  margin-left: 18px;
+}
+
+.departure {
+  flex: 0.8;
+  min-width: none;
+  border: 1px solid rgb(202, 202, 202);
+  padding: 10px;
+}
+
+.special-fares {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+#departure {
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+}
+
+#return {
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+}
