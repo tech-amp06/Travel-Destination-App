@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getRelatedAirports } from '../../api/autocomplete';
 
-interface Airport {
+interface AirportData {
   airport_code: string;
   airport_name: string;
   location: string;
@@ -17,8 +17,8 @@ function FlightBooking() {
   const { register, handleSubmit } = useForm();
   const [srcSearchVal, setSrcSearchVal] = useState('');
   const [destSearchVal, setDestSearchVal] = useState('');
-  const [srcRelatedAirports, setSrcRelatedAirports] = useState<Airport[]>([]);
-  const [destRelatedAirports, setDestRelatedAirports] = useState<Airport[]>([]);
+  const [srcRelatedAirports, setSrcRelatedAirports] = useState<AirportData[]>([]);
+  const [destRelatedAirports, setDestRelatedAirports] = useState<AirportData[]>([]);
 
   const goToResults = (bookingDetails: any) => {
     navigate(`/flights-results/${bookingDetails.fromCity.split(", ")[0]}/${bookingDetails.toCity.split(", ")[0]}`);

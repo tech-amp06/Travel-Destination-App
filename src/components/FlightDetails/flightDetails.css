@@ -1,0 +1,139 @@
+.throughout {
+  background-color: rgb(255, 248, 234);
+  padding-top: 60px;
+  padding-bottom: 40px;
+  margin-bottom: 0;
+}
+
+.particular-flight-details {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  padding-bottom: 0;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.metadata {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+.description {
+  margin-bottom: 30px;
+}
+
+.description h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.description h3 {
+  color: #666;
+  font-weight: 500;
+}
+
+.flight-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.info-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.info-section h2 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.info-label {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.info-value {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.route-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+.airport-info {
+  text-align: center;
+}
+
+.airport-code {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.airport-name {
+  color: #6c757d;
+  margin: 5px 0;
+}
+
+.airport-location {
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.route-divider {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+}
+
+.route-line {
+  height: 2px;
+  background: #dee2e6;
+  flex: 1;
+  position: relative;
+}
+
+.flight-duration {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  color: #6c757d;
+  white-space: nowrap;
+}

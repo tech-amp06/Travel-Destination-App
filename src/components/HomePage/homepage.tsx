@@ -68,7 +68,7 @@ function HomePage() {
 
   return (
     <>
-      <div className="slide-div" onClick={() => {navigate('/suggested', {state: Destinations[index].country})}}>
+      <div className="slide-div" onClick={() => {navigate('/flights')}}>
         <img className="slider" src={ Destinations[index].hlink } alt="..." />
         <div className="slider-text">
           <h2>{ Destinations[index].heading }</h2>

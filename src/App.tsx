@@ -3,10 +3,10 @@ import Login from './components/LoginPage/login'
 import Header from './components/Header/header'
 import HomePage from './components/HomePage/homepage'
 import Flights from './components/Flights/flights'
-import Suggested from './components/SuggestedDestination/suggested'
 import FlightBookingResults from './components/FlightBooking/FlightBookingResults/flightBookingResults'
 import { Routes, Route } from 'react-router-dom'
 import Profile from './components/Profile/profile'
+import FlightDetails from './components/FlightDetails/flightDetails'
 
 function App() {
   return (
@@ -31,15 +31,13 @@ function App() {
           element={<Flights />}
         />
         <Route 
-          path="/suggested"
-          element={<Suggested />}
-        />
-
-        <Route 
           path="/flights-results/:source/:destination"
           element={<FlightBookingResults />}
         />
-
+        <Route 
+          path='/flight-details/:flight_no'
+          element={<FlightDetails />}
+        />
         <Route 
           path="/profile"
           element={<Profile />}
