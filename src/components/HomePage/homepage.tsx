@@ -5,6 +5,7 @@ import { Themes } from '../../assets/themes';
 import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import { getTopFlights } from '../../api/getTopFlights';
+import { FaPlaneDeparture } from 'react-icons/fa';
 
 function HomePage() {
   const goToRef = useRef<HTMLDivElement>(null);
@@ -80,66 +81,33 @@ function HomePage() {
       <div className="themes">
         <h1>Top Trips This Week!</h1>
 
-        <div style={{ padding: 12.5 }} className="">
-          { topTripsList.map((trip: any) => {
-            return (
-              <div style={{ border: '1px solid grey', borderRadius: 10, margin: 20 }}>
-                <div 
-                  style={{ 
-                    margin: 12.5, 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'space-between',
-                    borderBottom: '1px solid grey'
-                  }} 
-                  className="trip"
-                  onClick={() => {navigate(`/flights/:${trip.source_code}/:${trip.dest_code}`)}}
-                >
-                  <div 
-                    style={{ 
-                      flex: 1, 
-                      textAlign: 'center' 
-                    }} 
-                    className="place"
-                  >
-                    <h4 
-                      style={{ 
-                        margin: 10, 
-                        fontWeight: 'bold' 
-                      }}
-                    >
-                      { trip.source_location }
-                    </h4>
-                    <p>{ trip.source_airport }</p>
+        <div className="trip-container">
+          {topTripsList.map((trip: any, index: number) => (
+            <div key={index} className="trip-card">
+              <div 
+                className="trip"
+                onClick={() => {navigate(`/flights/:${trip.source_code}/:${trip.dest_code}`)}}
+              >
+                <div className="trip-details">
+                  <div className="place">
+                    <h4>{trip.source_location}</h4>
+                    <p>{trip.source_airport}</p>
                   </div>
 
-                  <img src="https://static.vecteezy.com/system/resources/previews/027/008/274/non_2x/black-arrow-png-symbol-free-vector.jpg" alt="to" style={{ width: '80px', height: '50px', objectFit: 'contain' }} />
+                  <FaPlaneDeparture size={24} color="#3498db" className="arrow-icon" />
 
-                  <div 
-                    style={{ 
-                      flex: 1, 
-                      textAlign: 'center' 
-                    }} 
-                    className="place"
-                  >
-                    <h4 
-                      style={{ 
-                        margin: 10, 
-                        fontWeight: 'bold' 
-                      }}
-                    >
-                      { trip.dest_location }
-                    </h4>
-                    <p>{ trip.dest_airport }</p>
+                  <div className="place">
+                    <h4>{trip.dest_location}</h4>
+                    <p>{trip.dest_airport}</p>
                   </div>
                 </div>
 
                 <div className="pricing">
-                  <h5 style={{ fontWeight: 'bold', color: 'green', textAlign: 'center' }}>Now at just Rs. { trip.inr }!!!</h5>
+                  <h5 className="price">₹{trip.inr ? trip.inr.toLocaleString('en-IN') : "N/A"}</h5>
                 </div>
               </div>
-            )
-          }) }
+            </div>
+          ))}
         </div>
       </div>
       

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { getFlightDetails } from "../../api/getFlightDetails";
 import airlines from '../../assets/airlines.json';
+import { useForm } from "react-hook-form";
 import './flightDetails.css';
+import { addPassenger } from "../../api/updatePassenger";
 
-interface FlightDetails {
-  flight_no: 35,
+interface FlightDetailsModel {
+  flight_no: number,
   route_id: number,
   distance: number,
   flight_duration: number,
@@ -25,10 +27,17 @@ interface FlightDetails {
   location_dest: string
 }
 
+export interface pnr {
+  pname: string,
+  dob: Date,
+  schedule_id: number
+}
+
 function FlightDetails() {
-  const navigate = useNavigate();
+  const { register, handleSubmit } = useForm();
   const { flight_no } = useParams();
-  const [flightDetails, setFlightDetails] = useState<FlightDetails | null>(null);
+  const [flightDetails, setFlightDetails] = useState<FlightDetailsModel | null>(null);
+  const [passengerNumber, setPassengerNumber] = useState(1);
 
   useEffect(() => {
     const fetchFlightDetails = async (flight_no: string | undefined) => {
@@ -43,6 +52,31 @@ function FlightDetails() {
 
     fetchFlightDetails(flight_no);
   }, [flight_no]);
+
+  useEffect(() => {
+    console.log(passengerNumber);
+  }, [passengerNumber]);
+
+  const updatePassenger = async (passengers: any) => {
+    const len = Math.floor(Object.keys(passengers).length / 2);
+    let passengerDetails = [];
+
+    for (let i = 0; i < len; i++) {
+      passengerDetails.push({
+        pname: passengers['pname' + i],
+        dob: passengers['dob' + i],
+        schedule_id: flightDetails?.schedule_id
+      })
+    }
+    
+    const response = await addPassenger(passengers);
+
+    if (response) {
+      console.log("Passenger detail added successfully!");
+    } else {
+      console.log("Passenger detail update failed");
+    }
+  }
 
   const formatDuration = (duration: number) => {
     const hours = Math.floor(duration);
@@ -93,7 +127,7 @@ function FlightDetails() {
           </div>
         </div>
 
-        <div className="flight-info-grid">
+        <div className="flight-info-grid mb-5">
           <div className="info-section">
             <h2>Flight Details</h2>
             <div className="info-row">
@@ -127,14 +161,74 @@ function FlightDetails() {
           </div>
         </div>
 
+        <div className="passenger-no-btns">
+          { [1, 2, 3, 4, 5, 6].map((value) => {
+            return (
+              <button
+                key={value}
+                className={`passenger-no ${value === passengerNumber ? 'active' : ''}`}
+                onClick={() => setPassengerNumber(value)}
+              >
+                {value}
+              </button>
+            )
+          }) }
+        </div>
+
         <button 
           className="btn btn-primary w-100 my-4 text"
-          onClick={() => {
-            navigate('');
-          }}  
+          data-bs-toggle="modal" 
+          data-bs-target="#passenger-details"
         >
           <h5>Book now</h5>
         </button>
+      </div>
+
+      {/* Modal */}
+      <div className="modal fade" id="passenger-details" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div className="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="staticBackdropLabel">Passenger Details</h1>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div className="modal-body">
+              <form onSubmit={handleSubmit(updatePassenger)}>
+                { Array.from({ length: passengerNumber }).map((value, index) => {
+                  return (
+                    <div style={{ marginBottom: '20px' }} className="details-section">
+                      <label htmlFor={"pname" + index} className="form-label">Name of passenger {index + 1}</label>
+                      <input {...register(("pname" + index))} id={"pname" + index} type="text" className="form-control" />
+
+                      <label htmlFor={"dob" + index}>Date of birth</label>
+                      <input {...register(("dob" + index))} id={"dob" + index} type="date" className="form-control" />
+                    </div>
+                  )
+                }) }
+
+                <div className="modal-footer">
+                  <button type="submit" className="btn btn-primary mx-auto mb-0" id="liveToastBtn">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Toast */}
+      <div className="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" className="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div className="toast-header">
+            {/* <img src="..." className="rounded me-2" alt="..." /> */}
+            <strong className="me-auto">Successful</strong>
+            <small>now</small>
+            <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div className="toast-body">
+            Tickets booked successfully!
+          </div>
+        </div>
       </div>
     </div>
   )

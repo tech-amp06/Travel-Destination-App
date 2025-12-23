@@ -90,7 +90,7 @@ function FlightBooking() {
               <datalist id='srcAirportList'>
                 { srcRelatedAirports.map((airport) => {
                   return (
-                    <option value={ airport.airport_code + ', ' + airport.airport_name }>{ airport.location }</option>
+                    <option key={airport.airport_code} value={ airport.airport_code + ', ' + airport.airport_name }>{ airport.location }</option>
                   )
                 }) }
               </datalist>
@@ -112,7 +112,7 @@ function FlightBooking() {
               <datalist id='destAirportList'>
                 { destRelatedAirports.map((airport) => {
                   return (
-                    <option value={ airport.airport_code + ', ' + airport.airport_name }>{ airport.location }</option>
+                    <option key={airport.airport_code} value={ airport.airport_code + ', ' + airport.airport_name }>{ airport.location }</option>
                   )
                 }) }
               </datalist>

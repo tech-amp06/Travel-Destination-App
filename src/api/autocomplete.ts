@@ -2,8 +2,7 @@ import axios from 'axios';
 
 export const getRelatedAirports = async (searchVal: string) => {
   try {
-    console.log(searchVal);
-    const response = await axios.post("http://localhost:3000/data/airport-list", { 
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/data/airport-list`, { 
       "searchVal": searchVal 
     });
     

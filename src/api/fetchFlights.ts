@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const fetchFlights = async ({ doj, fromCity, toCity }: any) => {
   try {
-    const response = await axios.post("http://localhost:3000/flights/fetch-flights", {
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/flights/fetch-flights`, {
       doj,
       fromCity,
       toCity

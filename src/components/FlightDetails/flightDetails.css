@@ -137,3 +137,28 @@
   color: #6c757d;
   white-space: nowrap;
 }
+
+.passenger-no-btns {
+  width: 50%;
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+}
+
+.passenger-no {
+  background-color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 50px;
+  aspect-ratio: 1 / 1;
+  border: 2px solid rgb(17, 108, 255);
+  color: rgb(17, 108, 255);
+}
+.passenger-no:hover {
+  background-color: rgb(225, 230, 255);
+  transition: 0.15s;
+}
+.active {
+  background-color: rgb(17, 108, 255);
+  color: white;
+}
