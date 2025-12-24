@@ -1,4 +1,4 @@
-DB_URL=https://xrsaxehiwxfyzqtmlksh.supabase.co
-DB_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhyc2F4ZWhpd3hmeXpxdG1sa3NoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTQ3MzA2NiwiZXhwIjoyMDc3MDQ5MDY2fQ.u3ep-j6bIfqxvjA6zc7GnLdl5IDdbfK0Mxy-SCgJgnE
-DB_PORT=5432
-DB_DATABASE=postgres
+DB_URL=""
+DB_SERVICE_ROLE_KEY=""
+DB_PORT=""
+DB_DATABASE=""
